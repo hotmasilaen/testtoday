@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="umur"></p>
+    <form name="myForm" onsubmit="return validateForm()">
+        Password:<input type="text" name="fname" />
+        <input type="submit" value="submit" />
+    </form>
+    </br>
+    <form name="myFormPhoneNumber" onsubmit="return validatePhoneNumber()">
+        No hp.:<input type="text" name="nohp" />
+        <input type="submit" value="submit" />
+    </form>
+    <p>Nomor HP kamu: </p>
+    <p id="nomorHp"></p>
+    <script>
+        // const nama = "Farhan";
+        // const Nama = "Lia";
+        // const nAma = "Lia";
+
+        const nama = "Farhan";
+        let alamat = "Jakarta";
+        alamat = "Lampung";
+        var umur = 20;
+
+        console.log('Umur saya:', umur);
+
+        // alert('Umur saya: ' + umur);
+
+        document.getElementById("umur").innerHTML = 'Umur saya: ' + umur;
+
+        const hargaTas = 250000;
+        const hargaSepatu = 150000;
+        console.log('tipe data variable hargaSepatu: ', typeof hargaSepatu);
+
+        const diskonTas = hargaTas * 0.1;
+        const totalBayar = (hargaTas + hargaSepatu) - diskonTas;
+
+
+        console.log('Yang hrus dibayar: ', totalBayar);
+
+        const x = 25;
+        const y = 35;
+        const z = "25";
+
+        console.log("Apakah x dan y sama? ", x == y);
+        console.log("Apakah x dan z sama? ", x == z);
+
+        console.log("Apakah x dan z identik? ", x === z);
+        console.log("Apakah x dan y identik? ", x === y);
+
+        console.log("Apakah x tidak sama dengan z? ", x != z);
+        console.log("Apakah x tidak sama dengan y? ", x != y);
+
+        console.log("Apakah x tidak identik dengan y? ", x !== y);
+
+        function validateForm() {
+            let x = document.forms['myForm']["fname"].value;
+            const existPswd = "1234@"
+
+            if (x === existPswd) {
+                alert("Password benar.");
+                return false;
+            } else {
+                alert("Password salah!");
+            }
+        }
+
+        function validatePhoneNumber() {
+            let x = document.forms['myFormPhoneNumber']["nohp"].value;
+
+            if (x.length < 11) {
+                alert("Nomor hp harus minimal 11 angka.");
+                return false;
+            } else {
+                alert(x.replace('08', '+628'));
+                // console.log(x.replace('08', '+62'));
+                // document.getElementById('nomorHp').innerHTML = x.replace('08', '+62');
+            }
+        }
+
+        const hari = 6;
+
+        switch (hari) {
+            case 2:
+                console.log('hari ini hari selasa');
+                break;
+            case 3:
+                console.log('hari ini hari rabu');
+                break;
+            case 4:
+                console.log('hari ini hari kamis');
+                break;
+            default:
+                console.log('hari ini hari libur');
+                break;
+        }
+
+        const colors = ['red', 'yellow', 'brown', 'white'];
+        colors.push('purple')
+        console.log(colors.length);
+        for (var i in colors) {
+            document.write("<p>color list: " + colors[i] + "</p>");
+        }
+        for (var i = 1; i <= colors.length; i++) {
+            document.write("<p>color: " + colors[i] + "</p>");
+        }
+
+        console.log(colors.sort());
+
+        for (var i = 21; i <= 20; i++) {
+            document.write("<p>The number is " + i + "</p>");
+        }
+
+        let dataSiswa = {
+            nama: "Nia",
+            umur: 20,
+            alamat: "Jakarta"
+        }
+
+        console.log(dataSiswa.alamat);
+        dataSiswa.alamat = 'Bandung';
+        delete dataSiswa.umur;
+
+        for (var i in dataSiswa) {
+            console.log('Data siswa: ', dataSiswa[i]);
+        }
+
+
+        const dataSiswaSiswi = [{
+            nama: "Nia",
+            umur: 20,
+            alamat: "Jakarta"
+        }, {
+            nama: "Putra",
+            umur: 21,
+            alamat: "Bogor"
+        }]
+
+        function penjumlahan(angka1, angka2) {
+            let result = angka1 + angka2;
+            return result;
+        }
+
+        function diskon50(harga) {
+            let potonganHarga = harga * 0.3;
+            return potonganHarga
+        }
+
+        const hargaBuku = 23000;
+        const hargaBinder = 11000;
+        console.log('Total Bayar: ', penjumlahan(hargaBuku, hargaBinder));
+        console.log('potongan harga: ', diskon50(hargaBuku));
+        console.log('potongan binder: ', diskon50(hargaBinder));
+
+
+    </script>
+</body>
+
+</html>
